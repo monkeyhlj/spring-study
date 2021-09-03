@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    
+    <settings>
+        <!-- 打印SQL-->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+        <!-- 开启延迟加载 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 开启二级缓存 -->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    
+    <!-- 配置MyBatis运行环境 -->
+    <environments default="development">
+        <environment id="development">
+            <!-- 配置JDBC事务管理 -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- POOLED配置JDBC数据源连接池 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"></property>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"></property>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;characterEncoding=UTF-8"></property>
+                <property name="username" value="root"></property>
+                <property name="password" value="root"></property>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 注册AccountMapper.xml -->
+    <mappers>
+        <mapper resource="com/southwind/mapper/AccountMapper.xml"></mapper>
+        <mapper resource="com/southwind/repository/AccountRepository.xml"></mapper>
+        <mapper resource="com/southwind/repository/StudentRepository.xml"></mapper>
+        <mapper resource="com/southwind/repository/ClassesRepository.xml"/>
+        <mapper resource="com/southwind/repository/CustomerRepository.xml"/>
+        <mapper resource="com/southwind/repository/GoodsRepository.xml"/>
+    </mappers>
+
+</configuration>
