@@ -1,0 +1,7 @@
+server:
+  port: 8180
+provider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.southwind.configuration.NacosWeightedRule
+rocketmq:
+  name-server: 192.168.248.129:9876

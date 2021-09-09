@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+      filter:
+        enabled: false
+  application:
+    name: p1
+server:
+  port: 8083
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+rocketmq:
+  name-server: 192.168.248.129:9876
+  producer:
+    group: myprovider
